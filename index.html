@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:cursive;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        background: #3cf003;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .btn{
+        padding: 10px 60px;
+        background: #fff;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 500;
+        border-radius: 30px;
+    }
+    .popup{
+        width: 400px;
+        background: #fff;
+        border-radius: 6px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%,-50%)scale(0.2);
+        text-align: center;
+        padding: 0 30px 30px;
+        color: #333;
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+    }
+    .popup img{
+        /* width: ; */
+        margin-top: -50px;
+        border-radius: 50%;
+        box-shadow:0 2px 5px rgba(0, 0, 0, 0.10) ;
+    }
+    .popup h2{
+        font-size: 32px;
+        font-weight: 500;
+        margin: 30px 0 10px;
+    }
+    .popup button{
+        width: 100%;
+        margin-top: 50px;
+        padding: 10px 4px;
+        background: #333;
+        color: #fff;
+        border: 0;
+        outline: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow:0 2px 5px rgba(0, 0, 0, 0.10);
+
+    }
+    .open-popup{
+        visibility: visible;
+        top: 50%;
+        transform: translate(-50%,-50%) scale(1);
+    }
+</style>
+<body>
+    <div class="container">
+        <button type="submit" class="btn" onclick="openPopUp()">Submit</button> 
+        <div class="popup" id="popup">
+            <img style="width: 50px;" src="https://www.shutterstock.com/image-vector/green-check-mark-icon-tick-600w-522874111.jpg" alt="">
+
+            <h2>thank You</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quibusdam totam! Possimus, autem a. Saepe a magnam ullam, quasi odit aspernatur esse modi deleniti ducimus. Cumque quia accusantium nulla obcaecati.</p>
+            <button type="button" onclick="closePopup()">ok</button>
+        </div>
+    </div>
+    <script>
+        let popup = document.getElementById("popup")
+        console.log(popup)
+
+        function openPopUp(){
+            popup.classList.add("open-popup")
+            
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup")
+
+        }
+        
+
+    </script>
+</body>
+</html>
